@@ -1,7 +1,6 @@
 # 3D Constellation Matrix Visualizer
 
-Standalone 3D geometric network visualizer powered by Three.js & React Three Fiber (no text labels, clean geometric nodes).
-
+Standalone 3D geometric network visualizer powered by Three.js & React Three Fiber (no text labels, clean geometric nodes)
 ## How to run locally
 ```bash
 bun install
