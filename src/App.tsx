@@ -5,17 +5,18 @@ import { ConstellationGraph } from './components/ConstellationGraph';
 
 export default function App() {
   return (
-    <div style={{ width: '100vw', height: '100vh', background: '#090D16', overflow: 'hidden' }}>
+    <div style={{ width: '100vw', height: '100vh', background: '#040711', overflow: 'hidden' }}>
       <Canvas
         camera={{ position: [0, 0, 13.5], fov: 45 }}
         gl={{ antialias: true, powerPreference: 'high-performance' }}
       >
-        <color attach="background" args={['#090D16']} />
-        <fog attach="fog" args={['#090D16', 12, 28]} />
+        <color attach="background" args={['#040711']} />
+        <fog attach="fog" args={['#040711', 14, 32]} />
 
-        <ambientLight intensity={0.6} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#38BDF8" />
-        <pointLight position={[-10, -10, -10]} intensity={1.0} color="#818CF8" />
+        <ambientLight intensity={0.4} />
+        <pointLight position={[12, 14, 12]} intensity={3.2} color="#FFFFFF" />
+        <pointLight position={[-10, -10, -8]} intensity={2.2} color="#00F0FF" />
+        <pointLight position={[8, -12, 6]} intensity={1.8} color="#FF2A85" />
 
         <Suspense fallback={null}>
           <ConstellationGraph />
