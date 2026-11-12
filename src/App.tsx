@@ -13,10 +13,11 @@ export default function App() {
         <color attach="background" args={['#040711']} />
         <fog attach="fog" args={['#040711', 14, 32]} />
 
-        <ambientLight intensity={0.4} />
+        <ambientLight intensity={0.35} />
+        <directionalLight position={[6, 12, 8]} intensity={2.2} color="#FFFFFF" />
         <pointLight position={[12, 14, 12]} intensity={3.2} color="#FFFFFF" />
-        <pointLight position={[-10, -10, -8]} intensity={2.2} color="#00F0FF" />
-        <pointLight position={[8, -12, 6]} intensity={1.8} color="#FF2A85" />
+        <pointLight position={[-10, -10, -8]} intensity={2.4} color="#00F0FF" />
+        <pointLight position={[8, -12, 6]} intensity={2.0} color="#FF2A85" />
 
         <Suspense fallback={null}>
           <ConstellationGraph />

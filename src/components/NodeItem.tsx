@@ -51,15 +51,30 @@ export function NodeItem({ node, isHovered, onHover }: NodeItemProps) {
             <dodecahedronGeometry args={[node.size, 0]} />
           )}
 
-          <meshStandardMaterial
+          <meshPhysicalMaterial
             color={node.color}
             emissive={node.color}
-            emissiveIntensity={isHovered ? 2.2 : 0.7}
-            roughness={0.08}
-            metalness={0.92}
+            emissiveIntensity={isHovered ? 2.4 : 0.85}
+            roughness={0.05}
+            metalness={0.15}
+            clearcoat={1.0}
+            clearcoatRoughness={0.04}
+            reflectivity={1.0}
+            ior={1.55}
+            iridescence={0.75}
             toneMapped={false}
           />
         </mesh>
+
+        {/* Point light emitted by node to illuminate nearby geometries */}
+        {(node.type === 'CORE_DOMAIN' || isHovered) && (
+          <pointLight
+            color={node.color}
+            intensity={isHovered ? 3.5 : 1.6}
+            distance={4.5}
+            decay={2}
+          />
+        )}
 
         {/* Glow Halo for Core Domains & Hovered Nodes */}
         {(node.type === 'CORE_DOMAIN' || isHovered) && (
