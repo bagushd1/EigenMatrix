@@ -21,14 +21,10 @@ export function ConstellationGraph() {
 
   return (
     <group ref={groupRef} position={[0, 0, 0]}>
-      {/* Central Matrix Orbital Ring Guides */}
-      <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <ringGeometry args={[4.2, 4.22, 64]} />
-        <meshBasicMaterial color="#00F0FF" transparent opacity={0.35} side={2} toneMapped={false} />
-      </mesh>
-      <mesh rotation={[Math.PI / 3, Math.PI / 6, 0]}>
-        <ringGeometry args={[5.4, 5.42, 64]} />
-        <meshBasicMaterial color="#B026FF" transparent opacity={0.25} side={2} toneMapped={false} />
+      {/* Outer Geodesic Bounding Polytope (Sacred Geometry / Topology) */}
+      <mesh>
+        <icosahedronGeometry args={[6.2, 1]} />
+        <meshBasicMaterial color="#00F0FF" wireframe transparent opacity={0.07} />
       </mesh>
 
       {/* Network Edges / Connections */}
